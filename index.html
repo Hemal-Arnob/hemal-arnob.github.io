@@ -82,12 +82,22 @@
     }
 
     ul {
-        list-style-type: none;
+        list-style: none;
         padding-left: 0;
     }
 
     ul li {
-        padding: 5px 0;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 8px;
+    }
+
+    ul li::before {
+        content: "➤"; /* arrow symbol */
+        position: absolute;
+        left: 0;
+        color: #C0C0C0; /* silver color */
+        font-weight: bold;
     }
 
     footer {
