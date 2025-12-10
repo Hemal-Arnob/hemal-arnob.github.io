@@ -1,126 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnob Achariya | Personal Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #0077b6;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #023e8a;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 20px;
-            display: inline-block;
-        }
-        nav a:hover {
-            background-color: #0077b6;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: #fff;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-        h2 {
-            border-bottom: 2px solid #0077b6;
-            padding-bottom: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        ul li {
-            padding: 5px 0;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #023e8a;
-            color: #fff;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arnob Achariya | CV</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #0077b6, #023e8a);
+        color: #333;
+        transition: background 0.5s;
+    }
+
+    header {
+        color: #fff;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    header p {
+        margin: 10px 0 0;
+        font-size: 1.2rem;
+    }
+
+    header img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 15px;
+        border: 3px solid #fff;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: rgba(2, 62, 138, 0.9);
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 20px;
+        cursor: pointer;
+    }
+
+    nav a:hover, nav a.active {
+        background-color: #0077b6;
+    }
+
+    section {
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        display: none;
+    }
+
+    section.active {
+        display: block;
+    }
+
+    h2 {
+        border-bottom: 2px solid #0077b6;
+        padding-bottom: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    ul li {
+        padding: 5px 0;
+    }
+
+    .download-cv {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #0077b6;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .download-cv:hover {
+        background-color: #005f87;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(2, 62, 138, 0.9);
+        color: #fff;
+    }
+
+    /* Gradient picker section */
+    .gradient-picker {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .gradient-picker input {
+        margin: 0 10px;
+        padding: 5px;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Arnob Achariya</h1>
-        <p>M.Sc. in Electric Transportation Systems | Experienced Operation & Maintenance Engineer</p>
-    </header>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-    </nav>
+<header>
+    <h1>Arnob Achariya</h1>
+    <p>M.Sc. in Electric Transportation Systems | Operation & Maintenance Engineer</p>
+    <img src="arnob.jpg" alt="Arnob Achariya">
+    <br>
+    <a href="Arnob_Achariya_CV.pdf" class="download-cv" download>Download CV</a>
+</header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am an experienced Operation & Maintenance Engineer with over 5 years of experience at APR Energy managing a 300 MW Diesel Power Plant. Skilled in switchyard operations, grid dispatch coordination, and team leadership. Recently completed my M.Sc. in Electric Transportation Systems from LUT University, Finland, and actively seeking new career opportunities.</p>
-    </section>
+<!-- Gradient picker -->
+<div class="gradient-picker">
+    <label>Choose Gradient Colors: </label>
+    <input type="color" id="color1" value="#0077b6">
+    <input type="color" id="color2" value="#023e8a">
+</div>
 
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>M.Sc. in Electric Transportation Systems</strong> – LUT University, Lahti, Finland</li>
-        </ul>
-    </section>
+<nav>
+    <a class="tab-link active" data-tab="about">About Me</a>
+    <a class="tab-link" data-tab="education">Education</a>
+    <a class="tab-link" data-tab="experience">Experience</a>
+    <a class="tab-link" data-tab="skills">Skills</a>
+</nav>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-            <li>
-                <strong>Operation & Maintenance Engineer</strong> – APR Energy, Dhaka (5+ years)
-                <ul>
-                    <li>Managed LV/MV/HV switchyard operations and maintenance.</li>
-                    <li>Coordinated grid dispatch with NLDC and handled plant reporting.</li>
-                    <li>Led shift teams, ensuring HSE compliance and operational efficiency.</li>
-                    <li>Supervised preventive and corrective maintenance activities.</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
+<section id="about" class="active">
+    <h2>About Me</h2>
+    <p>I am an experienced Operation & Maintenance Engineer with over 5 years of experience at APR Energy managing a 300 MW Diesel Power Plant. Skilled in switchyard operations, grid dispatch coordination, and team leadership. Recently completed my M.Sc. in Electric Transportation Systems from LUT University, Finland, and actively seeking new career opportunities.</p>
+</section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Switchyard Operations (LV/MV/HV)</li>
-            <li>Grid Dispatch Coordination</li>
-            <li>Operation & Maintenance Management</li>
-            <li>Team Leadership & Training</li>
-            <li>HSE Compliance</li>
-            <li>Power Plant Reporting & Documentation</li>
-        </ul>
-    </section>
+<section id="education">
+    <h2>Education</h2>
+    <ul>
+        <li><strong>M.Sc. in Electric Transportation Systems</strong> – LUT University, Lahti, Finland</li>
+    </ul>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Arnob Achariya | Contact: arnob@example.com</p>
-    </footer>
+<section id="experience">
+    <h2>Experience</h2>
+    <ul>
+        <li>
+            <strong>Operation & Maintenance Engineer</strong> – APR Energy, Dhaka (5+ years)
+            <ul>
+                <li>Managed LV/MV/HV switchyard operations and maintenance.</li>
+                <li>Coordinated grid dispatch with NLDC and handled plant reporting.</li>
+                <li>Led shift teams, ensuring HSE compliance and operational efficiency.</li>
+                <li>Supervised preventive and corrective maintenance activities.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Switchyard Operations (LV/MV/HV)</li>
+        <li>Grid Dispatch Coordination</li>
+        <li>Operation & Maintenance Management</li>
+        <li>Team Leadership & Training</li>
+        <li>HSE Compliance</li>
+        <li>Power Plant Reporting & Documentation</li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2025 Arnob Achariya | Contact: arnob@example.com</p>
+</footer>
+
+<script>
+    // Tabs
+    const tabs = document.querySelectorAll('.tab-link');
+    const sections = document.querySelectorAll('section');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            sections.forEach(sec => sec.classList.remove('active'));
+            const target = document.getElementById(tab.dataset.tab);
+            target.classList.add('active');
+        });
+    });
+
+    // Gradient color picker
+    const color1 = document.getElementById('color1');
+    const color2 = document.getElementById('color2');
+
+    function updateGradient() {
+        document.body.style.background = `linear-gradient(135deg, ${color1.value}, ${color2.value})`;
+    }
+
+    color1.addEventListener('input', updateGradient);
+    color2.addEventListener('input', updateGradient);
+</script>
+
 </body>
 </html>
+
