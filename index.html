@@ -105,13 +105,7 @@
         display: block;
         opacity: 1;
         transform: translateY(0);
-    }
-
-    #about {
-        border-left: 5px solid #C0C0C0;
-        padding: 25px;
-        font-size: 1.1rem;
-        line-height: 1.8;
+        border-left: 5px solid #C0C0C0; /* Left border on active tab */
     }
 
     h2 {
@@ -304,7 +298,6 @@
 </footer>
 
 <script>
-    // Tabs functionality
     const tabs = document.querySelectorAll('.tab-link');
     const sections = document.querySelectorAll('section');
 
@@ -323,7 +316,6 @@
             setTimeout(() => {
                 target.style.opacity = 1;
 
-                // Animate language bars only when the Language tab is active
                 if(tab.dataset.tab === 'languages'){
                     const bars = target.querySelectorAll('.progress-bar');
                     bars.forEach(bar => {
