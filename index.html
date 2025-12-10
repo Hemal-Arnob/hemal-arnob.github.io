@@ -62,7 +62,7 @@ header h1 span {
 
 header p {
     margin: 8px 0;
-    font-size: 0.95rem;
+    font-size: 0.95rem; /* smaller text */
     color: #C0C0C0;
 }
 
@@ -287,7 +287,80 @@ footer {
     </ul>
 </section>
 
-<!-- ... Other sections like Experience, Education, Language Skills, Certifications, Trainings remain the same ... -->
+<section id="experience">
+    <h2>Experience</h2>
+    <ul>
+        <li>
+            <strong>Operation & Maintenance Engineer</strong> – APR Energy, 300 MW Power Plant, Keraniganj, Dhaka | May 2018 – July 2023
+            <ul>
+                <li>Led shift operations across LV/MV/HV systems ensuring continuous, safe plant performance.</li>
+                <li>Coordinated real-time load dispatch with National Load Dispatch Center (NLDC).</li>
+                <li>Performed switchyard operations including synchronization, isolation, and equipment safety procedures.</li>
+                <li>Conducted inspections, preventive maintenance, and fault diagnosis across electrical systems.</li>
+                <li>Enforced HSE compliance and implemented safety procedures for all shift activities.</li>
+                <li>Managed team operations, documentation, daily reporting, and incident logs.</li>
+                <li>Supported third-party audits and inspections, ensuring technical data accuracy.</li>
+                <li><strong>Key Achievement:</strong> Improved equipment uptime by streamlining preventive maintenance procedures and leading reliability-focused initiatives.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <ul>
+        <li>
+            <strong>M.Sc. in Electric Transportation Systems</strong> – LUT University, Lahti, Finland | Graduated June 2025
+            <ul>
+                <li>Thesis: Techno-economic analysis of battery-electric heavy-duty vehicles (BE-HDEVs) and megawatt charging systems (MCS)</li>
+                <li>Focus: EV charging infrastructure, battery chemistries (NMC, LFP, NCA), grid compatibility, fast-charging technologies</li>
+            </ul>
+        </li>
+        <li>
+            <strong>B.Sc. in Electrical and Electronics Engineering</strong> – Ahsanullah University of Science and Technology, Bangladesh | 2016
+        </li>
+    </ul>
+</section>
+
+<section id="languages">
+    <h2>Language Skills</h2>
+    <div class="language">
+        <p>English – Band Score 8.5</p>
+        <div class="progress">
+            <div class="progress-bar english-bar" data-width="85%"></div>
+        </div>
+    </div>
+    <div class="language">
+        <p>Bengali – Native</p>
+        <div class="progress">
+            <div class="progress-bar bengali-bar" data-width="100%"></div>
+        </div>
+    </div>
+    <div class="language">
+        <p>Finnish – A2</p>
+        <div class="progress">
+            <div class="progress-bar finnish-bar" data-width="20%"></div>
+        </div>
+    </div>
+</section>
+
+<section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+        <li>Electrical Safety Certification</li>
+        <li>Power Plant Operation & Maintenance Certificate</li>
+        <li>HSE Compliance Training Certificate</li>
+    </ul>
+</section>
+
+<section id="trainings">
+    <h2>Trainings</h2>
+    <ul>
+        <li>CAT, MTU & SDMO Engine Troubleshooting – OEM Training</li>
+        <li>Environment, Health & Fire Safety (HSE) – Certified Training</li>
+        <li>Preventive Maintenance System (PMS) – Advanced Workshop</li>
+    </ul>
+</section>
 
 <footer>
     <p>&copy; 2025 Arnob Achariya</p>
@@ -317,14 +390,13 @@ tabs.forEach(tab => {
 
         sections.forEach(sec => {
             sec.classList.remove('active');
-            sec.style.opacity = 0;
+            sec.style.display = 'none';
         });
 
         const target = document.getElementById(tab.dataset.tab);
-        target.classList.add('active');
+        target.style.display = 'block';
         setTimeout(() => {
-            target.style.opacity = 1;
-
+            target.classList.add('active');
             if(tab.dataset.tab === 'languages'){
                 const bars = target.querySelectorAll('.progress-bar');
                 bars.forEach(bar => {
@@ -334,6 +406,9 @@ tabs.forEach(tab => {
         }, 50);
     });
 });
+
+/* Initialize first section */
+document.querySelector('.tab-link.active').click();
 </script>
 
 </body>
