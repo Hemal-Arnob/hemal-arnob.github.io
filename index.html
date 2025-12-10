@@ -9,179 +9,237 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #C0C0C0;
-    }
+/* Body and background */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #C0C0C0;
+    position: relative;
+    overflow-x: hidden;
+}
 
-    header {
-        text-align: center;
-        padding: 40px 20px 20px;
-        font-family: 'Roboto Slab', serif;
-    }
+/* Animated background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 20px);
+    z-index: -1;
+    animation: moveLines 20s linear infinite;
+}
 
-    header h1 {
-        font-size: 3rem;
-        margin: 0;
-        letter-spacing: 1px;
-        color: #fff;
-    }
+@keyframes moveLines {
+    0% {background-position-x: 0;}
+    100% {background-position-x: 200px;}
+}
 
-    header p {
-        margin: 10px 0;
-        font-size: 1.1rem;
-        color: #C0C0C0;
-    }
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    font-family: 'Roboto Slab', serif;
+    overflow: hidden;
+}
 
-    header img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-top: 15px;
-        border: 3px solid #C0C0C0;
-        transition: transform 0.3s ease;
-    }
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #fff;
+}
 
-    header img:hover {
-        transform: scale(1.05);
-    }
+header h1 span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeInUp 1s forwards;
+}
 
-    .contact-info {
-        margin: 5px 0;
-        font-size: 1rem;
-    }
+header p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #C0C0C0;
+}
 
-    .contact-info i {
-        color: #C0C0C0;
-        margin-right: 8px;
-        transition: color 0.3s ease;
-    }
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
 
-    .contact-info i:hover {
-        color: #fff;
-    }
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 15px;
+    border: 3px solid #C0C0C0;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
 
-    /* Navigation */
-    nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        background-color: #111;
-        border-top: 2px solid #fff; /* White border top */
-        border-bottom: 2px solid #fff; /* White border bottom */
-    }
+header img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #C0C0C0;
+}
 
-    nav a {
-        padding: 15px 25px;
-        color: #C0C0C0;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
+.contact-info {
+    margin: 5px 0;
+    font-size: 1rem;
+}
 
-    nav a:hover, nav a.active {
-        color: #000;
-        background-color: #C0C0C0;
-        border-radius: 5px;
-    }
+.contact-info i {
+    color: #C0C0C0;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
 
-    section {
-        max-width: 900px;
-        margin: 20px auto;
-        padding: 30px 25px;
-        background-color: #111;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease;
-    }
+.contact-info i:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
 
-    section.active {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-        border-left: 5px solid #C0C0C0; /* Left border on active tab */
-    }
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #111;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
 
-    h2 {
-        font-family: 'Roboto Slab', serif;
-        border-bottom: 2px solid #C0C0C0;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-    }
+nav a {
+    padding: 15px 25px;
+    color: #C0C0C0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
-    ul {
-        list-style: none;
-        padding-left: 0;
-    }
+nav a:hover, nav a.active {
+    color: #000;
+    background-color: #C0C0C0;
+    border-radius: 5px;
+}
 
-    ul li {
-        position: relative;
-        padding-left: 25px;
-        margin-bottom: 10px;
-    }
+/* Sections */
+section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px 25px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    position: relative;
+}
 
-    ul li::before {
-        content: "➤";
-        position: absolute;
-        left: 0;
-        color: #C0C0C0;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
+/* Animated left border */
+section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    ul li:hover::before {
-        color: #fff;
-    }
+section.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 0;
+    background-color: #C0C0C0;
+    animation: borderSlide 0.6s forwards;
+}
 
-    /* Language bars */
-    .language {
-        margin-bottom: 20px;
-    }
+@keyframes borderSlide {
+    from {height: 0;}
+    to {height: 100%;}
+}
 
-    .language p {
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
+h2 {
+    font-family: 'Roboto Slab', serif;
+    border-bottom: 2px solid #C0C0C0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
 
-    .progress {
-        background-color: #333;
-        border-radius: 10px;
-        overflow: hidden;
-        height: 22px;
-    }
+ul {
+    list-style: none;
+    padding-left: 0;
+}
 
-    .progress-bar {
-        height: 100%;
-        width: 0;
-        border-radius: 10px 0 0 10px;
-        transition: width 1.5s ease-in-out;
-        box-shadow: 0 0 5px rgba(255,255,255,0.2);
-    }
+ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
 
-    .english-bar { background-color: #00BFFF; }
-    .bengali-bar { background-color: #C0C0C0; }
-    .finnish-bar { background-color: #00FF7F; }
+ul li::before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: #C0C0C0;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
 
-    footer {
-        text-align: center;
-        padding: 25px;
-        background-color: #111;
-        color: #C0C0C0;
-        border-top: 1px solid #333;
-    }
+ul li:hover::before {
+    color: #fff;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+}
+
+/* Language bars */
+.language {
+    margin-bottom: 20px;
+}
+
+.language p {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.progress {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 22px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 10px 0 0 10px;
+    transition: width 1.5s ease-in-out;
+    box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+.english-bar { background-color: #00BFFF; }
+.bengali-bar { background-color: #C0C0C0; }
+.finnish-bar { background-color: #00FF7F; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #111;
+    color: #C0C0C0;
+    border-top: 1px solid #333;
+}
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Arnob Achariya</h1>
+    <h1 id="header-text"></h1>
     <p>M.Sc. Electric Transportation Systems | Operation & Maintenance Engineer</p>
     <img src="1724222029424.jpg" alt="Arnob Achariya">
     <p class="contact-info"><i class="fas fa-phone"></i>+358 40704 9697</p>
@@ -303,33 +361,44 @@
 </footer>
 
 <script>
-    const tabs = document.querySelectorAll('.tab-link');
-    const sections = document.querySelectorAll('section');
+/* Header animation */
+const headerText = "Arnob Achariya";
+const headerElem = document.getElementById('header-text');
+headerText.split('').forEach((char,i)=>{
+    const span = document.createElement('span');
+    span.textContent = char;
+    span.style.animationDelay = `${i*0.05}s`;
+    headerElem.appendChild(span);
+});
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
+/* Tabs and section animation */
+const tabs = document.querySelectorAll('.tab-link');
+const sections = document.querySelectorAll('section');
 
-            sections.forEach(sec => {
-                sec.classList.remove('active');
-                sec.style.opacity = 0;
-            });
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
 
-            const target = document.getElementById(tab.dataset.tab);
-            target.classList.add('active');
-            setTimeout(() => {
-                target.style.opacity = 1;
-
-                if(tab.dataset.tab === 'languages'){
-                    const bars = target.querySelectorAll('.progress-bar');
-                    bars.forEach(bar => {
-                        bar.style.width = bar.getAttribute('data-width');
-                    });
-                }
-            }, 50);
+        sections.forEach(sec => {
+            sec.classList.remove('active');
+            sec.style.opacity = 0;
         });
+
+        const target = document.getElementById(tab.dataset.tab);
+        target.classList.add('active');
+        setTimeout(() => {
+            target.style.opacity = 1;
+
+            if(tab.dataset.tab === 'languages'){
+                const bars = target.querySelectorAll('.progress-bar');
+                bars.forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-width');
+                });
+            }
+        }, 50);
     });
+});
 </script>
 
 </body>
