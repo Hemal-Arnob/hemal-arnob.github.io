@@ -65,13 +65,14 @@
         color: #fff;
     }
 
+    /* Navigation */
     nav {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         background-color: #111;
-        border-top: 1px solid #333;
-        border-bottom: 1px solid #333;
+        border-top: 2px solid #fff; /* White border top */
+        border-bottom: 2px solid #fff; /* White border bottom */
     }
 
     nav a {
@@ -158,11 +159,15 @@
 
     .progress-bar {
         height: 100%;
-        background-color: #000;
         width: 0;
         border-radius: 10px 0 0 10px;
         transition: width 1.5s ease-in-out;
+        box-shadow: 0 0 5px rgba(255,255,255,0.2);
     }
+
+    .english-bar { background-color: #00BFFF; }
+    .bengali-bar { background-color: #C0C0C0; }
+    .finnish-bar { background-color: #00FF7F; }
 
     footer {
         text-align: center;
@@ -256,19 +261,19 @@
     <div class="language">
         <p>English – Band Score 8.5</p>
         <div class="progress">
-            <div class="progress-bar" data-width="85%"></div>
+            <div class="progress-bar english-bar" data-width="85%"></div>
         </div>
     </div>
     <div class="language">
         <p>Bengali – Native</p>
         <div class="progress">
-            <div class="progress-bar" data-width="100%"></div>
+            <div class="progress-bar bengali-bar" data-width="100%"></div>
         </div>
     </div>
     <div class="language">
         <p>Finnish – A2</p>
         <div class="progress">
-            <div class="progress-bar" data-width="20%"></div>
+            <div class="progress-bar finnish-bar" data-width="20%"></div>
         </div>
     </div>
 </section>
