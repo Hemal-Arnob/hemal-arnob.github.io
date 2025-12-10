@@ -5,15 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arnob Achariya | CV</title>
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
 <style>
     body {
-        font-family: 'Lato', sans-serif;
+        font-family: 'Poppins', sans-serif;
         margin: 0;
         padding: 0;
         line-height: 1.6;
         background: linear-gradient(135deg, #000000, #C0C0C0);
         color: #333;
+        transition: background 0.5s ease;
     }
 
     header {
@@ -25,7 +26,8 @@
 
     header h1 {
         margin: 0;
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+        letter-spacing: 1px;
     }
 
     header p {
@@ -40,6 +42,11 @@
         object-fit: cover;
         margin-top: 15px;
         border: 3px solid #fff;
+        transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+        transform: scale(1.05);
     }
 
     nav {
@@ -47,6 +54,7 @@
         justify-content: center;
         background-color: rgba(0, 0, 0, 0.9);
         flex-wrap: wrap;
+        transition: all 0.3s ease;
     }
 
     nav a {
@@ -54,12 +62,14 @@
         text-decoration: none;
         padding: 15px 20px;
         cursor: pointer;
-        font-weight: bold;
+        font-weight: 600;
+        transition: all 0.3s ease;
     }
 
     nav a:hover, nav a.active {
         background-color: #C0C0C0;
         color: #000;
+        border-radius: 5px;
     }
 
     section {
@@ -67,12 +77,26 @@
         max-width: 900px;
         margin: 20px auto;
         background-color: #fff;
-        border-radius: 8px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
         display: none;
     }
 
     section.active {
         display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #about {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        background: linear-gradient(to right, #f9f9f9, #ececec);
+        padding: 30px;
+        border-left: 5px solid #C0C0C0;
     }
 
     h2 {
@@ -93,10 +117,10 @@
     }
 
     ul li::before {
-        content: "➤"; /* arrow symbol */
+        content: "➤"; 
         position: absolute;
         left: 0;
-        color: #C0C0C0; /* silver color */
+        color: #C0C0C0; 
         font-weight: bold;
     }
 
@@ -106,6 +130,7 @@
         background-color: rgba(0, 0, 0, 0.9);
         color: #fff;
     }
+
 </style>
 </head>
 <body>
@@ -225,11 +250,20 @@
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
 
-            sections.forEach(sec => sec.classList.remove('active'));
-            document.getElementById(tab.dataset.tab).classList.add('active');
+            sections.forEach(sec => {
+                sec.classList.remove('active');
+                sec.style.opacity = 0;
+            });
+
+            const target = document.getElementById(tab.dataset.tab);
+            target.classList.add('active');
+            setTimeout(() => {
+                target.style.opacity = 1;
+            }, 50);
         });
     });
 </script>
 
 </body>
 </html>
+
