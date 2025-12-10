@@ -18,7 +18,7 @@ body {
     color: #C0C0C0;
     position: relative;
     overflow-x: hidden;
-    font-size: 14px; /* smaller text */
+    font-size: 14px;
 }
 
 /* Electric pulse background */
@@ -50,7 +50,7 @@ header {
 header h1 {
     font-size: 2.2rem;
     margin: 0;
-    letter-spacing: 5px; /* spacing between first and last name */
+    letter-spacing: 5px;
     color: #fff;
 }
 
@@ -62,7 +62,7 @@ header h1 span {
 
 header p {
     margin: 8px 0;
-    font-size: 0.95rem; /* smaller text */
+    font-size: 0.95rem;
     color: #C0C0C0;
 }
 
@@ -71,7 +71,6 @@ header p {
     to {opacity: 1; transform: translateY(0);}
 }
 
-/* Electric beat glow effect */
 @keyframes electricBeat {
     from {text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF;}
     to {text-shadow: 0 0 15px #00BFFF, 0 0 30px #00BFFF;}
@@ -137,15 +136,24 @@ nav a:hover, nav a.active {
 section {
     max-width: 900px;
     margin: 20px auto;
-    padding: 25px;
+    padding: 0;
     background-color: #111;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    display: none;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease;
     position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Show active section */
+section.active {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    padding: 25px;
 }
 
 /* Left border animation */
@@ -155,14 +163,8 @@ section.active::before {
     left: 0;
     top: 0;
     width: 5px;
-    height: 0;
+    height: 100%;
     background-color: #C0C0C0;
-    animation: borderSlide 0.6s forwards;
-}
-
-@keyframes borderSlide {
-    from {height: 0;}
-    to {height: 100%;}
 }
 
 /* Headings */
@@ -379,7 +381,7 @@ headerText.split('').forEach((char,i)=>{
     headerElem.appendChild(span);
 });
 
-/* Tabs and section animation */
+/* Tabs */
 const tabs = document.querySelectorAll('.tab-link');
 const sections = document.querySelectorAll('section');
 
@@ -388,22 +390,17 @@ tabs.forEach(tab => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
 
-        sections.forEach(sec => {
-            sec.classList.remove('active');
-            sec.style.display = 'none';
-        });
+        sections.forEach(sec => sec.classList.remove('active'));
 
         const target = document.getElementById(tab.dataset.tab);
-        target.style.display = 'block';
-        setTimeout(() => {
-            target.classList.add('active');
-            if(tab.dataset.tab === 'languages'){
-                const bars = target.querySelectorAll('.progress-bar');
-                bars.forEach(bar => {
-                    bar.style.width = bar.getAttribute('data-width');
-                });
-            }
-        }, 50);
+        target.classList.add('active');
+
+        if(tab.dataset.tab === 'languages'){
+            const bars = target.querySelectorAll('.progress-bar');
+            bars.forEach(bar => {
+                bar.style.width = bar.getAttribute('data-width');
+            });
+        }
     });
 });
 
