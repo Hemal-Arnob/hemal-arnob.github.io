@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arnob    Achariya | CV</title>
+<title>Arnob Achariya | CV</title>
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
 <!-- Font Awesome -->
@@ -50,7 +50,7 @@ header {
 header h1 {
     font-size: 2.2rem;
     margin: 0;
-    letter-spacing: 5px;
+    letter-spacing: 5px; /* spacing between letters */
     color: #fff;
 }
 
@@ -58,6 +58,10 @@ header h1 span {
     opacity: 0;
     display: inline-block;
     animation: fadeInUp 1s forwards, electricBeat 1s infinite alternate;
+}
+
+header h1 span.space {
+    width: 15px; /* visible gap for space */
 }
 
 header p {
@@ -372,11 +376,12 @@ footer {
 
 <script>
 /* Header electric beat animation with spaced name */
-const headerText = "ARNOB  ACHARIYA";
+const headerText = ["A","R","N","O","B"," ","A","C","H","A","R","I","Y","A"];
 const headerElem = document.getElementById('header-text');
-headerText.split('').forEach((char,i)=>{
+headerText.forEach((char,i)=>{
     const span = document.createElement('span');
-    span.textContent = char;
+    if(char === " ") span.classList.add('space'); // space between names
+    else span.textContent = char;
     span.style.animationDelay = `${i*0.05}s`;
     headerElem.appendChild(span);
 });
@@ -410,5 +415,4 @@ document.querySelector('.tab-link.active').click();
 
 </body>
 </html>
-
 
