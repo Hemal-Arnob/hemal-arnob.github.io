@@ -3,12 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arnob Achariya | CV</title>
+<title>Arnob Achariya | Electrical & Power Systems Engineer</title>
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%2300BFFF'%3E⚡%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph / Social preview -->
+<meta property="og:title" content="Arnob Achariya | Electrical & Power Systems Engineer">
+<meta property="og:description" content="Electrical & Power Systems Engineer | M.Sc. Electric Transportation Systems | FAT Inspector | LV/MV/HV Systems, Grid Coordination, Commissioning">
+<meta property="og:type" content="website">
+<meta name="description" content="Portfolio CV of Arnob Achariya — Electrical & Power Systems Engineer specializing in LV/MV/HV systems, FAT inspection, and grid coordination.">
+
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+/* Body and background */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -20,6 +31,7 @@ body {
     font-size: 14px;
 }
 
+/* Electric pulse background */
 body::before {
     content: '';
     position: fixed;
@@ -37,6 +49,7 @@ body::before {
     100% {opacity: 0.4;}
 }
 
+/* Header */
 header {
     text-align: center;
     padding: 30px 20px 20px;
@@ -92,6 +105,7 @@ header img:hover {
     box-shadow: 0 0 15px #00BFFF;
 }
 
+/* Contact icons */
 .contact-info {
     margin: 5px 0;
     font-size: 0.95rem;
@@ -108,6 +122,7 @@ header img:hover {
     transform: scale(1.2);
 }
 
+/* Navigation */
 nav {
     display: flex;
     justify-content: center;
@@ -131,6 +146,7 @@ nav a:hover, nav a.active {
     border-radius: 5px;
 }
 
+/* Sections */
 section {
     max-width: 900px;
     margin: 20px auto;
@@ -163,6 +179,7 @@ section.active::before {
     background-color: #C0C0C0;
 }
 
+/* Headings */
 h2 {
     font-family: 'Roboto Slab', serif;
     border-bottom: 2px solid #C0C0C0;
@@ -185,6 +202,7 @@ p.job-meta {
     font-style: italic;
 }
 
+/* Lists */
 ul {
     list-style: none;
     padding-left: 0;
@@ -214,6 +232,7 @@ ul li:hover {
     transform: translateX(5px);
 }
 
+/* Language bars */
 .language {
     margin-bottom: 18px;
 }
@@ -242,6 +261,7 @@ ul li:hover {
 .bengali-bar { background-color: #C0C0C0; box-shadow: 0 0 8px #C0C0C0; }
 .finnish-bar { background-color: #00FF7F; box-shadow: 0 0 8px #00FF7F; }
 
+/* Certification boxes */
 .cert-box {
     background-color: #222;
     border-left: 4px solid #00BFFF;
@@ -256,6 +276,52 @@ ul li:hover {
     transform: translateY(-3px);
 }
 
+/* Project cards */
+.project-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-left: 4px solid #00FF7F;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 15px #00FF7F;
+    transform: translateY(-3px);
+}
+
+.project-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    color: #00FF7F;
+    margin: 0 0 4px;
+}
+
+.project-meta {
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+    margin: 0 0 10px;
+}
+
+.project-tags {
+    margin-top: 10px;
+}
+
+.project-tags span {
+    display: inline-block;
+    background-color: #222;
+    color: #C0C0C0;
+    border: 1px solid #444;
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.75rem;
+    margin: 3px 4px 0 0;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -263,6 +329,73 @@ footer {
     color: #C0C0C0;
     border-top: 1px solid #333;
     font-size: 0.9rem;
+}
+
+/* Social icons */
+.social-links {
+    margin-top: 14px;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #C0C0C0;
+    font-size: 1.3rem;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00BFFF;
+    transform: scale(1.2) translateY(-2px);
+    text-shadow: 0 0 10px #00BFFF;
+}
+
+/* Download CV button */
+.download-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 26px;
+    border: 2px solid #00BFFF;
+    border-radius: 30px;
+    color: #00BFFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #00BFFF;
+    color: #000;
+    box-shadow: 0 0 15px #00BFFF;
+}
+
+/* Print stylesheet */
+@media print {
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+    body::before { display: none !important; }
+    nav, .download-btn, .social-links, footer { display: none !important; }
+    section {
+        opacity: 1 !important;
+        transform: none !important;
+        height: auto !important;
+        padding: 12px 0 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #000 !important;
+        page-break-inside: avoid;
+    }
+    section::before { display: none !important; }
+    h2, h3.job-title { color: #000 !important; }
+    ul li::before { color: #000 !important; }
+    header h1, header h1 span { color: #000 !important; text-shadow: none !important; animation: none !important; }
+    .progress-bar { box-shadow: none !important; }
+    .project-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+    .project-card h3 { color: #000 !important; }
 }
 </style>
 </head>
@@ -274,12 +407,18 @@ footer {
     <img src="1724222029424.jpg" alt="Arnob Achariya">
     <p class="contact-info"><i class="fas fa-phone"></i>+358 40704 9697</p>
     <p class="contact-info"><i class="fas fa-envelope"></i>arnobachariya@gmail.com</p>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/arnob-achariya" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:arnobachariya@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
 </header>
 
 <nav>
     <a class="tab-link active" data-tab="about">About Me</a>
     <a class="tab-link" data-tab="skills">Skills</a>
     <a class="tab-link" data-tab="experience">Experience</a>
+    <a class="tab-link" data-tab="projects">Notable Projects</a>
     <a class="tab-link" data-tab="education">Education</a>
     <a class="tab-link" data-tab="languages">Language Skills</a>
     <a class="tab-link" data-tab="certifications">Certifications</a>
@@ -339,6 +478,75 @@ footer {
             </ul>
         </li>
     </ul>
+</section>
+
+<section id="projects">
+    <h2>Notable Projects</h2>
+
+    <div class="project-card">
+        <h3>BP Kaskida – HV Compressor Motor FAT</h3>
+        <p class="project-meta">Third-Party FAT Inspection, via Seatrium / Mayekawa | ABB Oy, Helsinki | Feb & May 2026</p>
+        <ul>
+            <li>Conducted Factory Acceptance Testing of a 1,119 kW HV compressor motor on behalf of BP for the Kaskida deepwater project (Gulf of Mexico).</li>
+            <li>Verified compliance against API 541, NEMA MG-1, and IEEE 112 standards.</li>
+            <li>Witnessed mechanical and bearing testing; investigated a vibration anomaly traced to interference from an adjacent test field and resolved it through re-testing.</li>
+            <li>Drafted the full inspection report on-site, including findings from the bearing inspection.</li>
+        </ul>
+        <div class="project-tags">
+            <span>API 541</span><span>NEMA MG-1</span><span>IEEE 112</span><span>HV Motor Testing</span>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h3>ADNOC Sahil Phase 3 – Synchronous Motor FAT</h3>
+        <p class="project-meta">Third-Party FAT Inspection, via TÜV Austria BTASH | ABB Oy, Helsinki | 2026</p>
+        <ul>
+            <li>Performed Factory Acceptance Testing of an 8 MW synchronous motor for ADNOC's Sahil Phase 3 development.</li>
+            <li>Verified equipment compliance with IEC 60034 and ATEX requirements for hazardous-area installations.</li>
+            <li>Reviewed manufacturer technical documentation and coordinated directly with manufacturer engineers and client representatives to resolve technical queries.</li>
+        </ul>
+        <div class="project-tags">
+            <span>IEC 60034</span><span>ATEX</span><span>Synchronous Motor</span><span>8 MW</span>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h3>Blutek Srl – Synchronous Motor FAT</h3>
+        <p class="project-meta">Third-Party FAT Inspection, via Applus+ | ABB Oy, Helsinki | 2026</p>
+        <ul>
+            <li>Carried out inspection, testing, and verification of synchronous motors manufactured by Blutek Srl prior to shipment.</li>
+            <li>Reviewed technical specifications and test procedures against international standards.</li>
+            <li>Coordinated with manufacturer and client representatives to ensure equipment quality and compliance.</li>
+        </ul>
+        <div class="project-tags">
+            <span>Synchronous Motor</span><span>Compliance Verification</span><span>Quality Assurance</span>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h3>Megawatt Charging Systems for Heavy-Duty EVs</h3>
+        <p class="project-meta">M.Sc. Thesis | LUT University, Lahti Campus | 2025</p>
+        <ul>
+            <li>Conducted a techno-economic analysis of battery-electric heavy-duty vehicles (BE-HDEVs) and megawatt charging systems (MCS).</li>
+            <li>Researched EV charging infrastructure, battery chemistries (NMC, LFP, NCA), grid compatibility, and fast-charging technologies for electrified freight transport.</li>
+        </ul>
+        <div class="project-tags">
+            <span>Megawatt Charging</span><span>Electromobility</span><span>Grid Compatibility</span><span>Battery Systems</span>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h3>300 MW Power Plant – Switchyard & Grid Interconnection Operations</h3>
+        <p class="project-meta">APR Energy, Keraniganj, Dhaka, Bangladesh | 2018 – 2023</p>
+        <ul>
+            <li>Operated and maintained the full electrical architecture: 400V generator output → 400V/11kV step-up transformers → 11kV switchyard → 230kV national grid interconnection.</li>
+            <li>Coordinated synchronization, isolation, and real-time dispatch with the National Load Dispatch Center (NLDC).</li>
+            <li>Led preventive maintenance initiatives that improved equipment uptime across the plant's electrical systems.</li>
+        </ul>
+        <div class="project-tags">
+            <span>Switchyard Operations</span><span>Grid Interconnection</span><span>230kV</span><span>NLDC Coordination</span>
+        </div>
+    </div>
 </section>
 
 <section id="education">
@@ -415,12 +623,16 @@ footer {
 </section>
 
 <footer>
+    <a class="download-btn" href="Arnob_Achariya_CV.pdf" download>
+        <i class="fas fa-download"></i> Download CV (PDF)
+    </a>
     <p>&copy; 2026 Arnob Achariya</p>
     <p class="contact-info"><i class="fas fa-phone"></i>+358 40704 9697</p>
     <p class="contact-info"><i class="fas fa-envelope"></i>arnobachariya@gmail.com</p>
 </footer>
 
 <script>
+/* Header electric beat animation with spaced name */
 const headerText = ["A","R","N","O","B"," ","A","C","H","A","R","I","Y","A"];
 const headerElem = document.getElementById('header-text');
 headerText.forEach((char,i)=>{
@@ -431,6 +643,7 @@ headerText.forEach((char,i)=>{
     headerElem.appendChild(span);
 });
 
+/* Tabs */
 const tabs = document.querySelectorAll('.tab-link');
 const sections = document.querySelectorAll('section');
 
@@ -453,6 +666,7 @@ tabs.forEach(tab => {
     });
 });
 
+/* Initialize first section */
 document.querySelector('.tab-link.active').click();
 </script>
 
