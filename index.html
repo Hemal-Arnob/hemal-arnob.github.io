@@ -9,7 +9,6 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-/* Body and background */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -21,7 +20,6 @@ body {
     font-size: 14px;
 }
 
-/* Electric pulse background */
 body::before {
     content: '';
     position: fixed;
@@ -39,7 +37,6 @@ body::before {
     100% {opacity: 0.4;}
 }
 
-/* Header */
 header {
     text-align: center;
     padding: 30px 20px 20px;
@@ -95,7 +92,6 @@ header img:hover {
     box-shadow: 0 0 15px #00BFFF;
 }
 
-/* Contact icons */
 .contact-info {
     margin: 5px 0;
     font-size: 0.95rem;
@@ -112,7 +108,6 @@ header img:hover {
     transform: scale(1.2);
 }
 
-/* Navigation */
 nav {
     display: flex;
     justify-content: center;
@@ -136,7 +131,6 @@ nav a:hover, nav a.active {
     border-radius: 5px;
 }
 
-/* Sections */
 section {
     max-width: 900px;
     margin: 20px auto;
@@ -169,7 +163,6 @@ section.active::before {
     background-color: #C0C0C0;
 }
 
-/* Headings */
 h2 {
     font-family: 'Roboto Slab', serif;
     border-bottom: 2px solid #C0C0C0;
@@ -178,7 +171,20 @@ h2 {
     font-size: 1.2rem;
 }
 
-/* Lists */
+h3.job-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.02rem;
+    color: #00BFFF;
+    margin: 18px 0 4px;
+}
+
+p.job-meta {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0 0 10px;
+    font-style: italic;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
@@ -208,7 +214,6 @@ ul li:hover {
     transform: translateX(5px);
 }
 
-/* Language bars */
 .language {
     margin-bottom: 18px;
 }
@@ -237,7 +242,6 @@ ul li:hover {
 .bengali-bar { background-color: #C0C0C0; box-shadow: 0 0 8px #C0C0C0; }
 .finnish-bar { background-color: #00FF7F; box-shadow: 0 0 8px #00FF7F; }
 
-/* Certification boxes */
 .cert-box {
     background-color: #222;
     border-left: 4px solid #00BFFF;
@@ -252,7 +256,6 @@ ul li:hover {
     transform: translateY(-3px);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -267,7 +270,7 @@ footer {
 
 <header>
     <h1 id="header-text"></h1>
-    <p>M.Sc. Electric Transportation Systems | Operation & Maintenance Engineer</p>
+    <p>M.Sc. Electric Transportation Systems | Operation & Maintenance Engineer | FAT Inspector</p>
     <img src="1724222029424.jpg" alt="Arnob Achariya">
     <p class="contact-info"><i class="fas fa-phone"></i>+358 40704 9697</p>
     <p class="contact-info"><i class="fas fa-envelope"></i>arnobachariya@gmail.com</p>
@@ -285,18 +288,19 @@ footer {
 
 <section id="about" class="active">
     <h2>About Me</h2>
-    <p>Electrical engineering professional with experience in high-voltage and medium-voltage systems, operations, maintenance, and commissioning. Background includes 5+ years in a 300 MW power plant environment, managing switchyard operations, grid coordination, and safety compliance. Recently completed an M.Sc. in Electric Transportation Systems with strong knowledge of power systems, protection, and electrical infrastructure. Skilled in HV isolation procedures, fault analysis, and leading technical operations safely and efficiently.</p>
+    <p>Electrical engineering professional with experience in high-voltage and medium-voltage systems, operations, maintenance, and commissioning. Background includes 5+ years in a 300 MW power plant environment, managing switchyard operations, grid coordination, and safety compliance. Currently working as an independent third-party Factory Acceptance Test (FAT) inspector, verifying HV electrical equipment for international clients against IEC, IEEE and NEMA standards prior to shipment. Recently completed an M.Sc. in Electric Transportation Systems with strong knowledge of power systems, protection, and electrical infrastructure. Skilled in HV isolation procedures, fault analysis, testing/inspection, and leading technical operations safely and efficiently.</p>
 </section>
 
 <section id="skills">
     <h2>Skills</h2>
     <ul>
         <li>High-Voltage / Medium-Voltage System Operations (LV/MV/HV)</li>
+        <li>Factory Acceptance Testing (FAT) & Site Acceptance Testing (SAT)</li>
+        <li>Compliance Verification – IEC 60034, IEEE 112, NEMA MG-1, API 541, ATEX</li>
         <li>Safe System of Work (SSoW), Lockout-Tagout, Permit-to-Work</li>
         <li>Switching, Isolation, Earthing & Energisation Procedures</li>
         <li>Grid Dispatch Coordination (NLDC)</li>
         <li>Electrical Protection Systems & Relay Analysis</li>
-        <li>Commissioning & FAT/SAT Participation</li>
         <li>Condition Monitoring & Inspection Reporting</li>
         <li>Contractor Supervision & Maintenance Planning</li>
         <li>HSE Compliance & Risk Management</li>
@@ -310,7 +314,19 @@ footer {
     <h2>Experience</h2>
     <ul>
         <li>
-            <strong>Operation & Maintenance Engineer</strong> – APR Energy, 300 MW Power Plant, Keraniganj, Dhaka | May 2018 – July 2023
+            <h3 class="job-title">Independent Third-Party FAT Inspector</h3>
+            <p class="job-meta">Contract (via Seatrium / ABB Oy, Helsinki, Finland) | 2026 – Present</p>
+            <ul>
+                <li>Conduct on-site Factory Acceptance Testing of HV motors and electrical equipment at ABB Oy Helsinki for international clients including BP and ADNOC.</li>
+                <li>Verify compliance with API 541, NEMA MG-1, IEC 60034, IEEE 112 and ATEX standards across motors up to 8 MW.</li>
+                <li>Witness mechanical, electrical and bearing tests; review manufacturer technical specifications and test procedures prior to sign-off.</li>
+                <li>Draft full inspection reports on-site and coordinate directly with manufacturer engineers and client representatives to resolve technical queries.</li>
+                <li>Projects inspected include BP Kaskida (1,119 kW compressor motor), ADNOC Sahil Phase 3 (8 MW synchronous motor, via TÜV Austria BTASH), and Blutek Srl synchronous motors (via Applus+).</li>
+            </ul>
+        </li>
+        <li>
+            <h3 class="job-title">Operation & Maintenance Engineer</h3>
+            <p class="job-meta">APR Energy, 300 MW Power Plant, Keraniganj, Dhaka | May 2018 – July 2023</p>
             <ul>
                 <li>Led shift operations across LV/MV/HV systems ensuring continuous, safe plant performance.</li>
                 <li>Coordinated real-time load dispatch with National Load Dispatch Center (NLDC).</li>
@@ -399,13 +415,12 @@ footer {
 </section>
 
 <footer>
-    <p>&copy; 2025 Arnob Achariya</p>
+    <p>&copy; 2026 Arnob Achariya</p>
     <p class="contact-info"><i class="fas fa-phone"></i>+358 40704 9697</p>
     <p class="contact-info"><i class="fas fa-envelope"></i>arnobachariya@gmail.com</p>
 </footer>
 
 <script>
-/* Header electric beat animation with spaced name */
 const headerText = ["A","R","N","O","B"," ","A","C","H","A","R","I","Y","A"];
 const headerElem = document.getElementById('header-text');
 headerText.forEach((char,i)=>{
@@ -416,7 +431,6 @@ headerText.forEach((char,i)=>{
     headerElem.appendChild(span);
 });
 
-/* Tabs */
 const tabs = document.querySelectorAll('.tab-link');
 const sections = document.querySelectorAll('section');
 
@@ -439,10 +453,8 @@ tabs.forEach(tab => {
     });
 });
 
-/* Initialize first section */
 document.querySelector('.tab-link.active').click();
 </script>
 
 </body>
 </html>
-
