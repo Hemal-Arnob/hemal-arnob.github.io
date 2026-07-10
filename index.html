@@ -1,677 +1,464 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arnob Achariya | Electrical & Power Systems Engineer</title>
 
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%2300BFFF'%3E⚡%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%234fc3d9'%3E⚡%3C/text%3E%3C/svg%3E">
 
-<!-- Open Graph / Social preview -->
 <meta property="og:title" content="Arnob Achariya | Electrical & Power Systems Engineer">
 <meta property="og:description" content="Electrical & Power Systems Engineer | M.Sc. Electric Transportation Systems | FAT Inspector | LV/MV/HV Systems, Grid Coordination, Commissioning">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://arnob-achariya.netlify.app/og-image-1200x630.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="description" content="Portfolio CV of Arnob Achariya — Electrical & Power Systems Engineer specializing in LV/MV/HV systems, FAT inspection, and grid coordination.">
+<meta name="description" content="Portfolio of Arnob Achariya — Electrical & Power Systems Engineer specializing in LV/MV/HV systems, FAT inspection, and grid coordination.">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-<!-- Font Awesome -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-/* Body and background */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #C0C0C0;
-    position: relative;
-    overflow-x: hidden;
-    font-size: 14px;
+:root{
+  --bg: #0b0f13;
+  --bg-alt: #10151b;
+  --card: #141a21;
+  --border: #212932;
+  --text: #c9d1d9;
+  --text-dim: #7d8892;
+  --heading: #f2f5f7;
+  --accent: #4fc3d9;
+  --accent-soft: rgba(79,195,217,0.12);
+  --accent2: #7ee6b8;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:'Inter',sans-serif; font-size:15px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{ background:var(--accent); color:#04222a; }
+
+body::before{
+  content:''; position:fixed; inset:0; z-index:-2;
+  background:
+    radial-gradient(ellipse 800px 500px at 15% -5%, rgba(79,195,217,0.08), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 20%, rgba(126,230,184,0.05), transparent 60%),
+    var(--bg);
+}
+body::after{
+  content:''; position:fixed; inset:0; z-index:-1; opacity:0.35;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size:42px 42px;
 }
 
-/* Electric pulse background */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle at 20% 30%, rgba(0,191,255,0.2) 0%, transparent 70%),
-                radial-gradient(circle at 80% 70%, rgba(0,255,127,0.2) 0%, transparent 70%);
-    z-index: -1;
-    animation: electricPulse 3s infinite alternate;
+.container{max-width:920px; margin:0 auto; padding:0 24px;}
+
+nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(11,15,19,0.75); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:920px; margin:0 auto; padding:14px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.nav-brand{ font-family:'Fraunces',serif; font-weight:600; color:var(--heading); font-size:1.05rem; letter-spacing:0.3px; white-space:nowrap;}
+.nav-brand span{ color:var(--accent); }
+.nav-links{ display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+.nav-links a{
+  color:var(--text-dim); text-decoration:none; font-size:0.83rem; font-weight:500;
+  padding:7px 12px; border-radius:20px; transition:all .25s ease;
+}
+.nav-links a:hover{ color:var(--heading); background:var(--card); }
+.nav-links a.active{ color:var(--bg); background:var(--accent); }
+
+.hero{ padding:72px 0 48px; text-align:center; position:relative; }
+.hero-photo{
+  width:132px; height:132px; border-radius:50%; object-fit:cover;
+  border:2px solid var(--border); box-shadow:0 0 0 6px var(--accent-soft);
+  margin-bottom:24px; opacity:0; animation:riseIn .8s ease forwards;
+}
+.hero h1{
+  font-family:'Fraunces',serif; font-weight:600; font-size:2.6rem; color:var(--heading);
+  margin:0 0 10px; letter-spacing:-0.5px; opacity:0; animation:riseIn .8s ease .1s forwards;
+}
+.hero .tagline{
+  color:var(--accent); font-weight:600; font-size:0.95rem; letter-spacing:1.5px;
+  text-transform:uppercase; margin-bottom:14px;
+  opacity:0; animation:riseIn .8s ease .2s forwards;
+}
+.hero .sub{
+  color:var(--text-dim); max-width:560px; margin:0 auto 26px; font-size:0.98rem;
+  opacity:0; animation:riseIn .8s ease .3s forwards;
+}
+.hero-links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; opacity:0; animation:riseIn .8s ease .4s forwards; }
+@keyframes riseIn{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 20px; border-radius:30px; font-size:0.85rem; font-weight:600;
+  text-decoration:none; transition:all .25s ease; border:1px solid transparent;
+}
+.btn-primary{ background:var(--accent); color:#04222a; }
+.btn-primary:hover{ box-shadow:0 0 22px rgba(79,195,217,0.4); transform:translateY(-2px); }
+.btn-ghost{ border-color:var(--border); color:var(--text); }
+.btn-ghost:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+
+section{ padding:56px 0; border-top:1px solid var(--border); }
+section:first-of-type{ border-top:none; }
+.section-label{
+  color:var(--accent); font-size:0.75rem; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin-bottom:8px; display:block;
+}
+.section-title{
+  font-family:'Fraunces',serif; font-size:1.7rem; color:var(--heading); font-weight:600;
+  margin:0 0 28px;
 }
 
-@keyframes electricPulse {
-    0% {opacity: 0.4;}
-    50% {opacity: 0.6;}
-    100% {opacity: 0.4;}
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+
+.skill-grid{ display:flex; flex-wrap:wrap; gap:10px; }
+.skill-chip{
+  background:var(--card); border:1px solid var(--border); color:var(--text);
+  padding:8px 15px; border-radius:8px; font-size:0.83rem; font-weight:500;
+  transition:all .25s ease;
+}
+.skill-chip:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+
+.timeline{ position:relative; padding-left:28px; }
+.timeline::before{
+  content:''; position:absolute; left:6px; top:6px; bottom:6px; width:1px;
+  background:linear-gradient(var(--accent), var(--border));
+}
+.t-item{ position:relative; padding-bottom:34px; }
+.t-item:last-child{ padding-bottom:0; }
+.t-dot{
+  position:absolute; left:-28px; top:4px; width:13px; height:13px; border-radius:50%;
+  background:var(--bg); border:2px solid var(--accent); box-shadow:0 0 10px rgba(79,195,217,0.5);
+}
+.t-role{ font-size:1.05rem; font-weight:700; color:var(--heading); }
+.t-meta{ font-size:0.82rem; color:var(--accent); font-weight:600; margin:3px 0 10px; }
+.t-item ul{ margin:0; padding-left:18px; }
+.t-item li{ font-size:0.9rem; color:var(--text); margin-bottom:6px; }
+.t-item li::marker{ color:var(--accent); }
+
+.project-card{
+  background:var(--card); border:1px solid var(--border); border-radius:12px;
+  padding:22px 24px; margin-bottom:16px; transition:all .3s ease; position:relative; overflow:hidden;
+}
+.project-card::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--accent2);
+  transform:scaleY(0); transform-origin:top; transition:transform .3s ease;
+}
+.project-card:hover{ border-color:var(--border); transform:translateY(-3px); box-shadow:0 10px 30px rgba(0,0,0,0.35); }
+.project-card:hover::before{ transform:scaleY(1); }
+.project-card h3{ font-size:1rem; color:var(--heading); margin:0 0 4px; }
+.project-meta{ font-size:0.8rem; color:var(--text-dim); font-style:italic; margin-bottom:10px; }
+.project-card ul{ padding-left:18px; margin:0 0 10px;}
+.project-card li{ font-size:0.88rem; margin-bottom:5px; color:var(--text); }
+.tag{
+  display:inline-block; background:var(--bg-alt); border:1px solid var(--border); color:var(--text-dim);
+  border-radius:20px; padding:3px 11px; font-size:0.72rem; margin:3px 5px 0 0;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 30px 20px 20px;
-    font-family: 'Roboto Slab', serif;
-    overflow: hidden;
+.edu-card{
+  background:var(--card); border:1px solid var(--border); border-radius:12px;
+  padding:20px 24px; margin-bottom:14px;
+}
+.edu-card h3{ font-size:0.98rem; color:var(--heading); margin:0 0 4px; }
+.edu-card .meta{ font-size:0.83rem; color:var(--accent); font-weight:600; margin-bottom:8px; }
+.edu-card p{ font-size:0.87rem; color:var(--text-dim); margin:0; }
+
+.lang-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.lang-card{ background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px 18px; }
+.lang-card .lname{ font-weight:700; color:var(--heading); font-size:0.92rem; }
+.lang-card .llevel{ color:var(--accent); font-size:0.78rem; font-weight:600; margin-top:2px;}
+.bar{ height:5px; background:var(--border); border-radius:3px; margin-top:10px; overflow:hidden; }
+.bar-fill{ height:100%; width:0; background:linear-gradient(90deg,var(--accent),var(--accent2)); border-radius:3px; transition:width 1.3s ease; }
+
+.cert-card{
+  background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent);
+  border-radius:8px; padding:16px 20px; margin-bottom:12px;
+}
+.cert-card strong{ color:var(--heading); font-size:0.93rem; }
+.cert-card .cmeta{ font-size:0.8rem; color:var(--text-dim); margin-top:4px; }
+.verified{
+  display:inline-flex; align-items:center; gap:5px; font-size:0.7rem; color:var(--accent2);
+  margin-top:6px; font-weight:600;
 }
 
-header h1 {
-    font-size: 2.2rem;
-    margin: 0;
-    letter-spacing: 5px; 
-    color: #fff;
+footer{ text-align:center; padding:48px 24px; border-top:1px solid var(--border); }
+footer p{ color:var(--text-dim); font-size:0.82rem; margin:6px 0; }
+.social-links{ margin:18px 0; }
+.social-links a{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--border);
+  color:var(--text-dim); margin:0 6px; text-decoration:none; transition:all .25s ease;
+}
+.social-links a:hover{ color:var(--accent); border-color:var(--accent); transform:translateY(-3px); }
+
+@media(max-width:640px){
+  .hero h1{ font-size:2rem; }
+  .nav-links a{ padding:6px 9px; font-size:0.76rem; }
+  .lang-grid{ grid-template-columns:1fr; }
 }
 
-header h1 span {
-    opacity: 0;
-    display: inline-block;
-    animation: fadeInUp 1s forwards, electricBeat 1s infinite alternate;
-}
-
-header h1 span.space {
-    width: 15px;
-}
-
-header p {
-    margin: 8px 0;
-    font-size: 0.95rem;
-    color: #C0C0C0;
-}
-
-@keyframes fadeInUp {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes electricBeat {
-    from {text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF;}
-    to {text-shadow: 0 0 15px #00BFFF, 0 0 30px #00BFFF;}
-}
-
-header img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 15px;
-    border: 3px solid #C0C0C0;
-    transition: transform 0.3s ease, box-shadow 0.5s ease;
-}
-
-header img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #00BFFF;
-}
-
-/* Contact icons */
-.contact-info {
-    margin: 5px 0;
-    font-size: 0.95rem;
-}
-
-.contact-info i {
-    color: #C0C0C0;
-    margin-right: 8px;
-    transition: all 0.3s ease;
-}
-
-.contact-info i:hover {
-    color: #00BFFF;
-    transform: scale(1.2);
-}
-
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: #111;
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-}
-
-nav a {
-    padding: 12px 20px;
-    color: #C0C0C0;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-nav a:hover, nav a.active {
-    color: #000;
-    background-color: #C0C0C0;
-    border-radius: 5px;
-}
-
-/* Sections */
-section {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0;
-    background-color: #111;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-    position: relative;
-    height: 0;
-    overflow: hidden;
-}
-
-section.active {
-    opacity: 1;
-    transform: translateY(0);
-    height: auto;
-    padding: 25px;
-}
-
-section.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 5px;
-    height: 100%;
-    background-color: #C0C0C0;
-}
-
-/* Headings */
-h2 {
-    font-family: 'Roboto Slab', serif;
-    border-bottom: 2px solid #C0C0C0;
-    padding-bottom: 8px;
-    margin-bottom: 12px;
-    font-size: 1.2rem;
-}
-
-h3.job-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.02rem;
-    color: #00BFFF;
-    margin: 18px 0 4px;
-}
-
-p.job-meta {
-    font-size: 0.85rem;
-    color: #888;
-    margin: 0 0 10px;
-    font-style: italic;
-}
-
-/* Lists */
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-ul li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 8px;
-    transition: transform 0.3s ease;
-}
-
-ul li::before {
-    content: "➤";
-    position: absolute;
-    left: 0;
-    color: #C0C0C0;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-ul li:hover::before {
-    color: #00BFFF;
-}
-
-ul li:hover {
-    transform: translateX(5px);
-}
-
-/* Language bars */
-.language {
-    margin-bottom: 18px;
-}
-
-.language p {
-    margin-bottom: 5px;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.progress {
-    background-color: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 20px;
-}
-
-.progress-bar {
-    height: 100%;
-    width: 0;
-    border-radius: 10px 0 0 10px;
-    transition: width 1.5s ease-in-out, box-shadow 0.5s ease-in-out;
-}
-
-.english-bar { background-color: #00BFFF; box-shadow: 0 0 8px #00BFFF; }
-.bengali-bar { background-color: #C0C0C0; box-shadow: 0 0 8px #C0C0C0; }
-.finnish-bar { background-color: #00FF7F; box-shadow: 0 0 8px #00FF7F; }
-
-/* Certification boxes */
-.cert-box {
-    background-color: #222;
-    border-left: 4px solid #00BFFF;
-    padding: 15px 20px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.cert-box:hover {
-    box-shadow: 0 0 15px #00BFFF;
-    transform: translateY(-3px);
-}
-
-/* Project cards */
-.project-card {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-left: 4px solid #00FF7F;
-    padding: 18px 22px;
-    margin-bottom: 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.project-card:hover {
-    box-shadow: 0 0 15px #00FF7F;
-    transform: translateY(-3px);
-}
-
-.project-card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.05rem;
-    color: #00FF7F;
-    margin: 0 0 4px;
-}
-
-.project-meta {
-    font-size: 0.85rem;
-    color: #888;
-    font-style: italic;
-    margin: 0 0 10px;
-}
-
-.project-tags {
-    margin-top: 10px;
-}
-
-.project-tags span {
-    display: inline-block;
-    background-color: #222;
-    color: #C0C0C0;
-    border: 1px solid #444;
-    border-radius: 20px;
-    padding: 3px 12px;
-    font-size: 0.75rem;
-    margin: 3px 4px 0 0;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #111;
-    color: #C0C0C0;
-    border-top: 1px solid #333;
-    font-size: 0.9rem;
-}
-
-/* Social icons */
-.social-links {
-    margin-top: 14px;
-}
-
-.social-links a {
-    display: inline-block;
-    color: #C0C0C0;
-    font-size: 1.3rem;
-    margin: 0 10px;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #00BFFF;
-    transform: scale(1.2) translateY(-2px);
-    text-shadow: 0 0 10px #00BFFF;
-}
-
-/* Download CV button */
-.download-btn {
-    display: inline-block;
-    margin-top: 18px;
-    padding: 10px 26px;
-    border: 2px solid #00BFFF;
-    border-radius: 30px;
-    color: #00BFFF;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #00BFFF;
-    color: #000;
-    box-shadow: 0 0 15px #00BFFF;
-}
-
-/* Print stylesheet */
-@media print {
-    body {
-        background: #fff !important;
-        color: #000 !important;
-    }
-    body::before { display: none !important; }
-    nav, .download-btn, .social-links, footer { display: none !important; }
-    section {
-        opacity: 1 !important;
-        transform: none !important;
-        height: auto !important;
-        padding: 12px 0 !important;
-        box-shadow: none !important;
-        background: #fff !important;
-        color: #000 !important;
-        page-break-inside: avoid;
-    }
-    section::before { display: none !important; }
-    h2, h3.job-title { color: #000 !important; }
-    ul li::before { color: #000 !important; }
-    header h1, header h1 span { color: #000 !important; text-shadow: none !important; animation: none !important; }
-    .progress-bar { box-shadow: none !important; }
-    .project-card { box-shadow: none !important; border: 1px solid #ccc !important; }
-    .project-card h3 { color: #000 !important; }
+@media print{
+  body::before, body::after, nav, .hero-links, .social-links, footer .btn{ display:none !important; }
+  body{ background:#fff; color:#000; }
+  section{ border:none; }
+  .reveal{ opacity:1 !important; transform:none !important; }
 }
 </style>
 </head>
 <body>
 
-<header>
-    <h1 id="header-text"></h1>
-    <p>M.Sc. Electric Transportation Systems | Operation & Maintenance Engineer | FAT Inspector</p>
-    <img src="1724222029424.jpg" alt="Arnob Achariya">
-    <p class="contact-info"><i class="fas fa-phone"></i>+358 40704 9697</p>
-    <p class="contact-info"><i class="fas fa-envelope"></i>arnobachariya@gmail.com</p>
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/arnob-achariya" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="mailto:arnobachariya@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    </div>
-</header>
-
 <nav>
-    <a class="tab-link active" data-tab="about">About Me</a>
-    <a class="tab-link" data-tab="skills">Skills</a>
-    <a class="tab-link" data-tab="experience">Experience</a>
-    <a class="tab-link" data-tab="projects">Notable Projects</a>
-    <a class="tab-link" data-tab="education">Education</a>
-    <a class="tab-link" data-tab="languages">Language Skills</a>
-    <a class="tab-link" data-tab="certifications">Certifications</a>
-    <a class="tab-link" data-tab="trainings">Trainings</a>
+  <div class="nav-inner">
+    <div class="nav-brand">ARNOB <span>ACHARIYA</span></div>
+    <div class="nav-links">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#languages" class="nav-link">Languages</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+    </div>
+  </div>
 </nav>
 
-<section id="about" class="active">
-    <h2>About Me</h2>
-    <p>Electrical engineering professional with experience in high-voltage and medium-voltage systems, operations, maintenance, and commissioning. Background includes 5+ years in a 300 MW power plant environment, managing switchyard operations, grid coordination, and safety compliance. Currently working as an independent third-party Factory Acceptance Test (FAT) inspector, verifying HV electrical equipment for international clients against IEC, IEEE and NEMA standards prior to shipment. Recently completed an M.Sc. in Electric Transportation Systems with strong knowledge of power systems, protection, and electrical infrastructure. Skilled in HV isolation procedures, fault analysis, testing/inspection, and leading technical operations safely and efficiently.</p>
+<div class="hero">
+  <img class="hero-photo" src="1724222029424.jpg" alt="Arnob Achariya">
+  <h1>Arnob Achariya</h1>
+  <div class="tagline">Electrical &amp; Power Systems Engineer</div>
+  <p class="sub">M.Sc. Electric Transportation Systems &middot; Operation &amp; Maintenance &middot; Third-Party FAT Inspector &middot; Espoo, Finland</p>
+  <div class="hero-links">
+    <a class="btn btn-primary" href="Arnob_Achariya_CV.pdf" download><i class="fas fa-download"></i> Download CV</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/arnob-achariya" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a class="btn btn-ghost" href="mailto:arnobachariya@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+</div>
+
+<div class="container">
+
+<section id="about">
+  <span class="section-label reveal">Introduction</span>
+  <h2 class="section-title reveal">About Me</h2>
+  <p class="reveal" style="color:var(--text); max-width:760px;">Electrical engineering professional with experience in high-voltage and medium-voltage systems, operations, maintenance, and commissioning. Background includes 5+ years in a 300&nbsp;MW power plant environment, managing switchyard operations, grid coordination, and safety compliance. Currently working as an independent third-party Factory Acceptance Test (FAT) inspector, verifying HV electrical equipment for international clients against IEC, IEEE and NEMA standards prior to shipment. Recently completed an M.Sc. in Electric Transportation Systems with strong knowledge of power systems, protection, and electrical infrastructure.</p>
 </section>
 
 <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>High-Voltage / Medium-Voltage System Operations (LV/MV/HV)</li>
-        <li>Factory Acceptance Testing (FAT) & Site Acceptance Testing (SAT)</li>
-        <li>Compliance Verification – IEC 60034, IEEE 112, NEMA MG-1, API 541, ATEX</li>
-        <li>Safe System of Work (SSoW), Lockout-Tagout, Permit-to-Work</li>
-        <li>Switching, Isolation, Earthing & Energisation Procedures</li>
-        <li>Grid Dispatch Coordination (NLDC)</li>
-        <li>Electrical Protection Systems & Relay Analysis</li>
-        <li>Condition Monitoring & Inspection Reporting</li>
-        <li>Contractor Supervision & Maintenance Planning</li>
-        <li>HSE Compliance & Risk Management</li>
-        <li>Troubleshooting, RCA & Technical Problem-Solving</li>
-        <li>Team Leadership in Shift Operations</li>
-        <li>Documentation, SLD Interpretation & Technical Reporting</li>
-    </ul>
+  <span class="section-label reveal">Capabilities</span>
+  <h2 class="section-title reveal">Skills</h2>
+  <div class="skill-grid reveal">
+    <span class="skill-chip">LV/MV/HV Operations</span>
+    <span class="skill-chip">FAT &amp; SAT</span>
+    <span class="skill-chip">IEC 60034</span>
+    <span class="skill-chip">IEEE 112</span>
+    <span class="skill-chip">NEMA MG-1</span>
+    <span class="skill-chip">API 541</span>
+    <span class="skill-chip">ATEX</span>
+    <span class="skill-chip">LOTO / Permit-to-Work</span>
+    <span class="skill-chip">Switching &amp; Isolation</span>
+    <span class="skill-chip">Grid Dispatch (NLDC)</span>
+    <span class="skill-chip">Protection Relay Analysis</span>
+    <span class="skill-chip">Condition Monitoring</span>
+    <span class="skill-chip">Contractor Supervision</span>
+    <span class="skill-chip">HSE Compliance</span>
+    <span class="skill-chip">RCA &amp; Troubleshooting</span>
+    <span class="skill-chip">Shift Team Leadership</span>
+  </div>
 </section>
 
 <section id="experience">
-    <h2>Experience</h2>
-    <ul>
-        <li>
-            <h3 class="job-title">Independent Third-Party FAT Inspector</h3>
-            <p class="job-meta">Contract (via Seatrium / ABB Oy, Helsinki, Finland) | 2026 – Present</p>
-            <ul>
-                <li>Conduct on-site Factory Acceptance Testing of HV motors and electrical equipment at ABB Oy Helsinki for international clients including BP and ADNOC.</li>
-                <li>Verify compliance with API 541, NEMA MG-1, IEC 60034, IEEE 112 and ATEX standards across motors up to 8 MW.</li>
-                <li>Witness mechanical, electrical and bearing tests; review manufacturer technical specifications and test procedures prior to sign-off.</li>
-                <li>Draft full inspection reports on-site and coordinate directly with manufacturer engineers and client representatives to resolve technical queries.</li>
-                <li>Projects inspected include BP Kaskida (1,119 kW compressor motor), ADNOC Sahil Phase 3 (8 MW synchronous motor, via TÜV Austria BTASH), and Blutek Srl synchronous motors (via Applus+).</li>
-            </ul>
-        </li>
-        <li>
-            <h3 class="job-title">Operation & Maintenance Engineer</h3>
-            <p class="job-meta">APR Energy, 300 MW Power Plant, Keraniganj, Dhaka | May 2018 – July 2023</p>
-            <ul>
-                <li>Led shift operations across LV/MV/HV systems ensuring continuous, safe plant performance.</li>
-                <li>Coordinated real-time load dispatch with National Load Dispatch Center (NLDC).</li>
-                <li>Performed switchyard operations including synchronization, isolation, and equipment safety procedures.</li>
-                <li>Conducted inspections, preventive maintenance, and fault diagnosis across electrical systems.</li>
-                <li>Enforced HSE compliance and implemented safety procedures for all shift activities.</li>
-                <li>Managed team operations, documentation, daily reporting, and incident logs.</li>
-                <li>Supported third-party audits and inspections, ensuring technical data accuracy.</li>
-                <li><strong>Key Achievement:</strong> Improved equipment uptime by streamlining preventive maintenance procedures and leading reliability-focused initiatives.</li>
-            </ul>
-        </li>
-    </ul>
+  <span class="section-label reveal">Career</span>
+  <h2 class="section-title reveal">Experience</h2>
+  <div class="timeline reveal">
+    <div class="t-item">
+      <div class="t-dot"></div>
+      <div class="t-role">Independent Third-Party FAT Inspector</div>
+      <div class="t-meta">via ABB Oy Helsinki / TÜV Austria BTASH / Applus+ &middot; 2025 – Present</div>
+      <ul>
+        <li>Conduct on-site Factory Acceptance Testing of HV motors and electrical equipment for international clients including BP and ADNOC.</li>
+        <li>Verify compliance with API 541, NEMA MG-1, IEC 60034, IEEE 112 and ATEX standards across motors up to 8 MW.</li>
+        <li>Witness mechanical, electrical and bearing tests; review manufacturer technical specifications prior to sign-off.</li>
+        <li>Draft full inspection reports on-site and coordinate directly with manufacturer and client engineers.</li>
+      </ul>
+    </div>
+    <div class="t-item">
+      <div class="t-dot"></div>
+      <div class="t-role">Operation &amp; Maintenance Engineer</div>
+      <div class="t-meta">APR Energy, 300 MW Power Plant, Keraniganj, Dhaka &middot; May 2018 – Jul 2023</div>
+      <ul>
+        <li>Led shift operations across LV/MV/HV systems ensuring continuous, safe plant performance.</li>
+        <li>Coordinated real-time load dispatch with the National Load Dispatch Center (NLDC).</li>
+        <li>Performed switchyard operations including synchronization, isolation, and equipment safety procedures.</li>
+        <li>Conducted inspections, preventive maintenance, and fault diagnosis; enforced HSE compliance across all shift activities.</li>
+        <li><strong style="color:var(--heading);">Key achievement:</strong> improved equipment uptime by streamlining preventive maintenance procedures.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-    <h2>Notable Projects</h2>
+  <span class="section-label reveal">Selected Work</span>
+  <h2 class="section-title reveal">Notable Projects</h2>
 
-    <div class="project-card">
-        <h3>BP Kaskida – HV Compressor Motor FAT</h3>
-        <p class="project-meta">Third-Party FAT Inspection, via Seatrium / Mayekawa | ABB Oy, Helsinki | Feb & May 2026</p>
-        <ul>
-            <li>Conducted Factory Acceptance Testing of a 1,119 kW HV compressor motor on behalf of BP for the Kaskida deepwater project (Gulf of Mexico).</li>
-            <li>Verified compliance against API 541, NEMA MG-1, and IEEE 112 standards.</li>
-            <li>Witnessed mechanical and bearing testing; investigated a vibration anomaly traced to interference from an adjacent test field and resolved it through re-testing.</li>
-            <li>Drafted the full inspection report on-site, including findings from the bearing inspection.</li>
-        </ul>
-        <div class="project-tags">
-            <span>API 541</span><span>NEMA MG-1</span><span>IEEE 112</span><span>HV Motor Testing</span>
-        </div>
-    </div>
+  <div class="project-card reveal">
+    <h3>BP Kaskida – HV Compressor Motor FAT</h3>
+    <p class="project-meta">Third-Party FAT Inspection &middot; ABB Oy, Helsinki &middot; Feb &amp; May 2026</p>
+    <ul>
+      <li>Conducted FAT of a 1,119 kW HV compressor motor for BP's Kaskida deepwater project (Gulf of Mexico).</li>
+      <li>Investigated a vibration anomaly traced to interference from an adjacent test field and resolved it through re-testing.</li>
+    </ul>
+    <div><span class="tag">API 541</span><span class="tag">NEMA MG-1</span><span class="tag">IEEE 112</span></div>
+  </div>
 
-    <div class="project-card">
-        <h3>ADNOC Sahil Phase 3 – Synchronous Motor FAT</h3>
-        <p class="project-meta">Third-Party FAT Inspection, via TÜV Austria BTASH | ABB Oy, Helsinki | 2026</p>
-        <ul>
-            <li>Performed Factory Acceptance Testing of an 8 MW synchronous motor for ADNOC's Sahil Phase 3 development.</li>
-            <li>Verified equipment compliance with IEC 60034 and ATEX requirements for hazardous-area installations.</li>
-            <li>Reviewed manufacturer technical documentation and coordinated directly with manufacturer engineers and client representatives to resolve technical queries.</li>
-        </ul>
-        <div class="project-tags">
-            <span>IEC 60034</span><span>ATEX</span><span>Synchronous Motor</span><span>8 MW</span>
-        </div>
-    </div>
+  <div class="project-card reveal">
+    <h3>ADNOC Sahil Phase 3 – Synchronous Motor FAT</h3>
+    <p class="project-meta">via TÜV Austria BTASH &middot; ABB Oy, Helsinki &middot; 2026</p>
+    <ul>
+      <li>Performed FAT of an 8 MW synchronous motor; verified compliance with IEC 60034 and ATEX requirements.</li>
+    </ul>
+    <div><span class="tag">IEC 60034</span><span class="tag">ATEX</span><span class="tag">8 MW</span></div>
+  </div>
 
-    <div class="project-card">
-        <h3>Blutek Srl – Synchronous Motor FAT</h3>
-        <p class="project-meta">Third-Party FAT Inspection, via Applus+ | ABB Oy, Helsinki | 2026</p>
-        <ul>
-            <li>Carried out inspection, testing, and verification of synchronous motors manufactured by Blutek Srl prior to shipment.</li>
-            <li>Reviewed technical specifications and test procedures against international standards.</li>
-            <li>Coordinated with manufacturer and client representatives to ensure equipment quality and compliance.</li>
-        </ul>
-        <div class="project-tags">
-            <span>Synchronous Motor</span><span>Compliance Verification</span><span>Quality Assurance</span>
-        </div>
-    </div>
+  <div class="project-card reveal">
+    <h3>Blutek Srl – Synchronous Motor FAT</h3>
+    <p class="project-meta">via Applus+ &middot; ABB Oy, Helsinki &middot; 2026</p>
+    <ul>
+      <li>Inspection, testing, and verification of synchronous motors prior to shipment against international standards.</li>
+    </ul>
+    <div><span class="tag">Quality Assurance</span><span class="tag">Compliance Verification</span></div>
+  </div>
 
-    <div class="project-card">
-        <h3>Megawatt Charging Systems for Heavy-Duty EVs</h3>
-        <p class="project-meta">M.Sc. Thesis | LUT University, Lahti Campus | 2025</p>
-        <ul>
-            <li>Conducted a techno-economic analysis of battery-electric heavy-duty vehicles (BE-HDEVs) and megawatt charging systems (MCS).</li>
-            <li>Researched EV charging infrastructure, battery chemistries (NMC, LFP, NCA), grid compatibility, and fast-charging technologies for electrified freight transport.</li>
-        </ul>
-        <div class="project-tags">
-            <span>Megawatt Charging</span><span>Electromobility</span><span>Grid Compatibility</span><span>Battery Systems</span>
-        </div>
-    </div>
+  <div class="project-card reveal">
+    <h3>Megawatt Charging Systems for Heavy-Duty EVs</h3>
+    <p class="project-meta">M.Sc. Thesis &middot; LUT University, Lahti &middot; 2025</p>
+    <ul>
+      <li>Techno-economic analysis of battery-electric heavy-duty vehicles and megawatt charging infrastructure.</li>
+    </ul>
+    <div><span class="tag">Electromobility</span><span class="tag">Grid Compatibility</span></div>
+  </div>
 
-    <div class="project-card">
-        <h3>300 MW Power Plant – Switchyard & Grid Interconnection Operations</h3>
-        <p class="project-meta">APR Energy, Keraniganj, Dhaka, Bangladesh | 2018 – 2023</p>
-        <ul>
-            <li>Operated and maintained the full electrical architecture: 400V generator output → 400V/11kV step-up transformers → 11kV switchyard → 230kV national grid interconnection.</li>
-            <li>Coordinated synchronization, isolation, and real-time dispatch with the National Load Dispatch Center (NLDC).</li>
-            <li>Led preventive maintenance initiatives that improved equipment uptime across the plant's electrical systems.</li>
-        </ul>
-        <div class="project-tags">
-            <span>Switchyard Operations</span><span>Grid Interconnection</span><span>230kV</span><span>NLDC Coordination</span>
-        </div>
-    </div>
+  <div class="project-card reveal">
+    <h3>300 MW Power Plant – Switchyard &amp; Grid Interconnection</h3>
+    <p class="project-meta">APR Energy, Dhaka, Bangladesh &middot; 2018 – 2023</p>
+    <ul>
+      <li>Operated the full chain: 400V generator → 400V/11kV step-up → 11kV switchyard → 230kV national grid.</li>
+    </ul>
+    <div><span class="tag">Switchyard Operations</span><span class="tag">230kV</span></div>
+  </div>
 </section>
 
 <section id="education">
-    <h2>Education</h2>
-    <ul>
-        <li>
-            <strong>M.Sc. in Electric Transportation Systems</strong> – LUT University, Lahti, Finland | Graduated June 2025
-            <ul>
-                <li>Thesis: Techno-economic analysis of battery-electric heavy-duty vehicles (BE-HDEVs) and megawatt charging systems (MCS)</li>
-                <li>Focus: EV charging infrastructure, battery chemistries (NMC, LFP, NCA), grid compatibility, fast-charging technologies</li>
-            </ul>
-        </li>
-        <li>
-            <strong>B.Sc. in Electrical and Electronics Engineering</strong> – Ahsanullah University of Science and Technology, Bangladesh | 2016
-        </li>
-    </ul>
+  <span class="section-label reveal">Academics</span>
+  <h2 class="section-title reveal">Education</h2>
+  <div class="edu-card reveal">
+    <h3>M.Sc. Electric Transportation Systems</h3>
+    <div class="meta">LUT University, Lahti, Finland &middot; Graduated June 2025</div>
+    <p>Thesis: techno-economic analysis of battery-electric heavy-duty vehicles and megawatt charging systems.</p>
+  </div>
+  <div class="edu-card reveal">
+    <h3>B.Sc. Electrical &amp; Electronics Engineering</h3>
+    <div class="meta">Ahsanullah University of Science &amp; Technology, Bangladesh &middot; 2016</div>
+  </div>
 </section>
 
 <section id="languages">
-    <h2>Language Skills</h2>
-    <div class="language">
-        <p>English – Band Score 8.5</p>
-        <div class="progress">
-            <div class="progress-bar english-bar" data-width="85%"></div>
-        </div>
+  <span class="section-label reveal">Communication</span>
+  <h2 class="section-title reveal">Languages</h2>
+  <div class="lang-grid reveal">
+    <div class="lang-card">
+      <div class="lname">English</div>
+      <div class="llevel">IELTS 8.5</div>
+      <div class="bar"><div class="bar-fill" data-width="94%"></div></div>
     </div>
-    <div class="language">
-        <p>Bengali – Native</p>
-        <div class="progress">
-            <div class="progress-bar bengali-bar" data-width="100%"></div>
-        </div>
+    <div class="lang-card">
+      <div class="lname">Bengali</div>
+      <div class="llevel">Native</div>
+      <div class="bar"><div class="bar-fill" data-width="100%"></div></div>
     </div>
-    <div class="language">
-        <p>Finnish – A2</p>
-        <div class="progress">
-            <div class="progress-bar finnish-bar" data-width="20%"></div>
-        </div>
+    <div class="lang-card">
+      <div class="lname">Hindi</div>
+      <div class="llevel">Fluent</div>
+      <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
     </div>
+    <div class="lang-card">
+      <div class="lname">Finnish</div>
+      <div class="llevel">A2.1</div>
+      <div class="bar"><div class="bar-fill" data-width="25%"></div></div>
+    </div>
+  </div>
 </section>
 
 <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-        <li>Electrical Safety Certification</li>
-        <li>Power Plant Operation & Maintenance Certificate</li>
-        <li>HSE Compliance Training Certificate</li>
-    </ul>
-
-    <div class="cert-box">
-        <strong>Excel Course For Business</strong> – Coursera | Issued Oct 2020<br>
-        Credential ID: 326SVEQ3X7PY<br>
-        Skills: Microsoft Excel
+  <span class="section-label reveal">Verified</span>
+  <h2 class="section-title reveal">Certifications</h2>
+  <div class="reveal">
+    <div class="cert-card">
+      <strong>Engineering Project Management</strong>
+      <div class="cmeta">Coursera &middot; Issued Aug 2020 &middot; Credential ID: N5HCQCC4KGH9</div>
+      <div class="verified"><i class="fas fa-circle-check"></i> Verified credential</div>
     </div>
-
-    <div class="cert-box">
-        <strong>Engineering Project Management</strong> – Coursera | Issued Aug 2020<br>
-        Credential ID: N5HCQCC4KGH9<br>
-        Skills: Project Management
+    <div class="cert-card">
+      <strong>Excel Course For Business</strong>
+      <div class="cmeta">Coursera &middot; Issued Oct 2020 &middot; Credential ID: 326SVEQ3X7PY</div>
+      <div class="verified"><i class="fas fa-circle-check"></i> Verified credential</div>
     </div>
-
-    <div class="cert-box">
-        <strong>Electric Power Systems</strong> – Coursera | Issued Jul 2020<br>
-        Credential ID: HKDT7272PQ7V
+    <div class="cert-card">
+      <strong>Electric Power Systems</strong>
+      <div class="cmeta">Coursera &middot; Issued Jul 2020 &middot; Credential ID: HKDT7272PQ7V</div>
+      <div class="verified"><i class="fas fa-circle-check"></i> Verified credential</div>
     </div>
+  </div>
 </section>
 
-<section id="trainings">
-    <h2>Trainings</h2>
-    <ul>
-        <li>CAT, MTU & SDMO Engine Troubleshooting – OEM Training</li>
-        <li>Environment, Health & Fire Safety (HSE) – Certified Training</li>
-        <li>Preventive Maintenance System (PMS) – Advanced Workshop</li>
-    </ul>
-</section>
+</div>
 
 <footer>
-    <a class="download-btn" href="Arnob_Achariya_CV.pdf" download>
-        <i class="fas fa-download"></i> Download CV (PDF)
-    </a>
-    <p>&copy; 2026 Arnob Achariya</p>
-    <p class="contact-info"><i class="fas fa-phone"></i>+358 40704 9697</p>
-    <p class="contact-info"><i class="fas fa-envelope"></i>arnobachariya@gmail.com</p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/arnob-achariya" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:arnobachariya@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+  <p>+358 40 704 9697 &nbsp;&middot;&nbsp; arnobachariya@gmail.com &nbsp;&middot;&nbsp; Espoo, Finland</p>
+  <p>&copy; 2026 Arnob Achariya</p>
 </footer>
 
 <script>
-/* Header electric beat animation with spaced name */
-const headerText = ["A","R","N","O","B"," ","A","C","H","A","R","I","Y","A"];
-const headerElem = document.getElementById('header-text');
-headerText.forEach((char,i)=>{
-    const span = document.createElement('span');
-    if(char === " ") span.classList.add('space'); 
-    else span.textContent = char;
-    span.style.animationDelay = `${i*0.05}s`;
-    headerElem.appendChild(span);
-});
-
-/* Tabs */
-const tabs = document.querySelectorAll('.tab-link');
+const links = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section');
+const setActive = () => {
+  let current = sections[0].id;
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= 120) current = sec.id;
+  });
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+};
+window.addEventListener('scroll', setActive);
+setActive();
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        sections.forEach(sec => sec.classList.remove('active'));
-
-        const target = document.getElementById(tab.dataset.tab);
-        target.classList.add('active');
-
-        if(tab.dataset.tab === 'languages'){
-            const bars = target.querySelectorAll('.progress-bar');
-            bars.forEach(bar => {
-                bar.style.width = bar.getAttribute('data-width');
-            });
-        }
-    });
-});
-
-/* Initialize first section */
-document.querySelector('.tab-link.active').click();
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      if (e.target.classList.contains('lang-grid')) {
+        e.target.querySelectorAll('.bar-fill').forEach(b => {
+          b.style.width = b.getAttribute('data-width');
+        });
+      }
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
 </script>
 
 </body>
